@@ -16,4 +16,13 @@ export const globalStyle = StyleSheet.create({
     fontSize: 14,
     fontFamily: 'IBMPlexSans-Regular',
   },
+  smallMarginTop: {
+
+  },
+  mediumMarginTop: {
+    marginTop: 30,
+  },
+  largeMarginTop: {
+
+  }
 });

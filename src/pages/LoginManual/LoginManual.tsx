@@ -1,10 +1,11 @@
 import React from 'react';
-import {Image, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TextInput, View, TouchableOpacity} from 'react-native';
 
 import styles from './LoginManualStykes';
+
 import {globalStyle} from '../../styles/global';
 
-// import ChevronBack from '../../assets/icons/';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class LoginManual extends React.Component {
   render() {
@@ -29,16 +30,24 @@ export default class LoginManual extends React.Component {
               />
             </View>
             <View>
-              <Text style={styles.sectionTitle}>Digite sua senha</Text>
-              <TextInput
-                style={globalStyle.inputPrimary}
-                placeholder="***************"
-                placeholderTextColor="#fff"
-              />
+              <View>
+                <Text
+                  style={[styles.sectionTitle, globalStyle.mediumMarginTop]}>
+                  Digite sua senha
+                </Text>
+              </View>
+              <View style={styles.loginInputView}>
+                <TextInput
+                  style={styles.inputPrimary}
+                  placeholder="***************"
+                  placeholderTextColor="#fff"
+                />
+                <Icon style={styles.loginInputIcon} name="eye-outline" />
+              </View>
             </View>
             <View style={styles.loginBtnView}>
               <TouchableOpacity style={styles.loginBtn}>
-                <Text>Avançar</Text>
+                <Text style={styles.loginBtnText}>Avançar</Text>
               </TouchableOpacity>
             </View>
           </View>

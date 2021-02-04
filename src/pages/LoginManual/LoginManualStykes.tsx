@@ -10,10 +10,11 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   form: {
-    backgroundColor: 'blue',
+    // backgroundColor: 'blue',
     marginTop: 70,
   },
   sectionTitle: {
+    marginTop: 4,
     fontSize: 14,
     fontWeight: '600',
     color: Colors.white,
@@ -25,21 +26,36 @@ export default StyleSheet.create({
     fontWeight: '400',
     color: Colors.white,
   },
-  highlight: {
-    fontWeight: '700',
-  },
   imageLogo: {
-    marginTop: 150,
-    backgroundColor: 'blue',
+    marginTop: 110,
+    /*backgroundColor: 'blue',*/
   },
   loginBtnView: {
     marginTop: 10,
   },
   loginBtn: {
-    alignItems: 'center',
     backgroundColor: Colors.blue,
     padding: 10,
+    fontSize: 14,
     borderRadius: 5,
     fontFamily: 'Poppins-Bold',
   },
+  loginBtnText: {
+    textAlign: 'center',
+  },
+  inputPrimary: {
+    flex: 1,
+    borderBottomColor: '#fff',
+  },
+  loginInputIcon: {
+    padding: 10,
+    color: '#fff',
+  },
+  loginInputView: {
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderColor: Colors.medium,
+  }
+
+
 });
