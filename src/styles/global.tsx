@@ -4,7 +4,8 @@ import {Colors} from './colors';
 export const globalStyle = StyleSheet.create({
   safeArea: {
     backgroundColor: Colors.primary,
-    paddingHorizontal: 32,
+    // paddingHorizontal: 0,
+    flex: 1,
   },
   inputPrimary: {
     borderLeftWidth: 0,
@@ -17,12 +18,12 @@ export const globalStyle = StyleSheet.create({
     fontFamily: 'IBMPlexSans-Regular',
   },
   smallMarginTop: {
-
+    marginTop: 0,
   },
   mediumMarginTop: {
     marginTop: 30,
   },
   largeMarginTop: {
-
-  }
+    marginTop: 0,
+  },
 });

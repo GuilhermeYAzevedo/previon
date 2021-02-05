@@ -1,5 +1,12 @@
 import React from 'react';
-import {Image, Text, TextInput, View, TouchableOpacity} from 'react-native';
+import {
+  Image,
+  Text,
+  TextInput,
+  View,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 
 import styles from './LoginManualStykes';
 
@@ -10,14 +17,12 @@ import Icon from 'react-native-vector-icons/Ionicons';
 export default class LoginManual extends React.Component {
   render() {
     return (
-      <>
+      <ScrollView style={styles.scrollViewProp}>
         <View style={styles.body}>
-          {/*Logo*/}
           <Image
             style={styles.imageLogo}
             source={require('../../assets/images/logo.png')}
           />
-          {/*form*/}
           <View style={styles.form}>
             <View>
               <Text style={styles.sectionTitle}>
@@ -36,9 +41,9 @@ export default class LoginManual extends React.Component {
                   Digite sua senha
                 </Text>
               </View>
-              <View style={styles.loginInputView}>
+              <View>
                 <TextInput
-                  style={styles.inputPrimary}
+                  style={globalStyle.inputPrimary}
                   placeholder="***************"
                   placeholderTextColor="#fff"
                 />
@@ -55,9 +60,7 @@ export default class LoginManual extends React.Component {
             Esqueceu sua senha? obtenha ajuda
           </Text>
         </View>
-      </>
+      </ScrollView>
     );
   }
 }
-
-// export default LoginManual extends React.Component;

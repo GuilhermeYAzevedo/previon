@@ -2,6 +2,10 @@ import {StyleSheet} from 'react-native';
 import {Colors} from '../../styles/colors';
 
 export default StyleSheet.create({
+  scrollViewProp: {
+    backgroundColor: Colors.primary,
+    color: Colors.primary,
+  },
   body: {
     backgroundColor: Colors.primary,
     width: '100%',
@@ -9,8 +13,10 @@ export default StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
   },
+  imageLogo: {
+    marginTop: 110,
+  },
   form: {
-    // backgroundColor: 'blue',
     marginTop: 70,
   },
   sectionTitle: {
@@ -20,15 +26,11 @@ export default StyleSheet.create({
     color: Colors.white,
     fontFamily: 'IBMPlexSans-SemiBold',
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 14,
-    fontWeight: '400',
-    color: Colors.white,
-  },
-  imageLogo: {
-    marginTop: 110,
-    /*backgroundColor: 'blue',*/
+  loginInputIcon: {
+    color: '#fff',
+    position: 'absolute',
+    right: 20,
+    bottom: 20,
   },
   loginBtnView: {
     marginTop: 10,
@@ -43,19 +45,10 @@ export default StyleSheet.create({
   loginBtnText: {
     textAlign: 'center',
   },
-  inputPrimary: {
-    flex: 1,
-    borderBottomColor: '#fff',
+  sectionDescription: {
+    marginTop: 8,
+    fontSize: 14,
+    fontWeight: '400',
+    color: Colors.white,
   },
-  loginInputIcon: {
-    padding: 10,
-    color: '#fff',
-  },
-  loginInputView: {
-    flexDirection: 'row',
-    borderBottomWidth: 1,
-    borderColor: Colors.medium,
-  }
-
-
 });
