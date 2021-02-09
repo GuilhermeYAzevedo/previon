@@ -16,11 +16,10 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import api from '../../services/api';
 
-
-import {user} from '../../models/login';
+import User from '../../models/login';
 
 export default function LoginManual() {
-  const [input, setInput] = useState<user>({login: '', senha: ''});
+  const [input, setInput] = useState<User>(new User());
 
   const navigation = useNavigation();
 
