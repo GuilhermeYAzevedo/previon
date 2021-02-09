@@ -36,14 +36,15 @@ export default StyleSheet.create({
     marginTop: 10,
   },
   loginBtn: {
-    backgroundColor: Colors.blue,
+    backgroundColor: Colors.secondary,
     padding: 10,
-    fontSize: 14,
     borderRadius: 5,
-    fontFamily: 'Poppins-Bold',
   },
   loginBtnText: {
     textAlign: 'center',
+    color: Colors.white,
+    fontFamily: 'Poppins-Light',
+    fontSize: 16,
   },
   sectionDescription: {
     marginTop: 8,

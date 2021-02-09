@@ -15,6 +15,7 @@ export const globalStyle = StyleSheet.create({
     borderBottomWidth: 1,
     fontWeight: '400',
     fontSize: 14,
+    color: '#fff',
     fontFamily: 'IBMPlexSans-Regular',
   },
   smallMarginTop: {
