@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {
   Image,
+  ScrollView,
   Text,
   TextInput,
-  View,
   TouchableOpacity,
-  ScrollView,
+  View,
 } from 'react-native';
 
 import styles from './login-manual-styles';
@@ -14,27 +14,31 @@ import {globalStyle} from '../../styles/global';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
-import {Login} from '../../models/login';
 import api from '../../services/api';
 
-const LoginManual = () => {
+
+import {user} from '../../models/login';
+
+export default function LoginManual() {
+  const [input, setInput] = useState<user>({login: '', senha: ''});
+
   const navigation = useNavigation();
 
-  const [login, setLogin] = useState('');
-  const [senha, setSenha] = useState('');
+  const handleChange = (name: any, value: any) => {
+    setInput({...input, [name]: value});
+  };
 
-  // requisição de login
-  /*  handleSubmit = event => {
-    event.preventDefault();
-
-    const response = api.post('/Usuario/Login', user).then(
-      res => {
+  const successfulLogin = async () => {
+    await api.post('/Usuario/Login', input).then(
+      (res) => {
         console.log(res);
+        navigation.navigate('Home');
       },
       (err) => {
         console.log(err);
       },
-  };*/
+    );
+  };
 
   return (
     <ScrollView style={styles.scrollViewProp}>
@@ -53,8 +57,8 @@ const LoginManual = () => {
               keyboardType={'email-address'}
               placeholder="mateus@bitzen.com.br"
               placeholderTextColor="#fff"
-              value={login}
-              onChange={e => setLogin(e) }
+              onChangeText={(e) => handleChange('login', e)}
+              value={input.login}
             />
           </View>
           <View>
@@ -68,8 +72,8 @@ const LoginManual = () => {
                 style={globalStyle.inputPrimary}
                 placeholder="***************"
                 placeholderTextColor="#fff"
-                value={senha}
-                onChange={e => setSenha(e)}
+                onChangeText={(e) => handleChange('senha', e)}
+                value={input.senha}
               />
               <Icon style={styles.loginInputIcon} name="eye-outline" />
             </View>
@@ -77,7 +81,7 @@ const LoginManual = () => {
           <View style={styles.loginBtnView}>
             <TouchableOpacity
               style={styles.loginBtn}
-              onPress={() => navigation.navigate('Home')}>
+              onPress={() => successfulLogin()}>
               <Text style={styles.loginBtnText}>Avançar</Text>
             </TouchableOpacity>
           </View>
@@ -88,6 +92,4 @@ const LoginManual = () => {
       </View>
     </ScrollView>
   );
-};
-
-export default LoginManual;
+}

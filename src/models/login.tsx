@@ -7,3 +7,8 @@ export class Login {
     this.senha = '';
   }
 }
+
+export interface user {
+  login: any;
+  senha: any;
+}
